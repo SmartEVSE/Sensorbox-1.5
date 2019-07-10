@@ -355,7 +355,7 @@ void main(void)
             RC1STAbits.CREN = 0;
             RC1STAbits.CREN = 1;                                                // Restart Uart
             
-            SecTimer = Timer+5000;                                               // Wait 5 seconds before sending anything
+            SecTimer = Timer+5000;                                              // Wait 5 seconds before sending anything
         }
 
         // Receive data from modbus
@@ -435,7 +435,7 @@ void main(void)
                 Tbuffer[n++] = pBytes[2];
                 Tbuffer[n++] = pBytes[3];
                 }
-                                                        						// Frame Check Sequence (FCS) Field
+                                                                                // Frame Check Sequence (FCS) Field
                 cs = crc16sensorbox1(Tbuffer, n);                            	// calculate CRC16 from data			
                 Tbuffer[n++] = ((unsigned char)(cs));
                 Tbuffer[n++] = ((unsigned char)(cs>>8));	
